@@ -1,0 +1,67 @@
+<html>
+<head>
+    <meta name='csrf-token', content='<%= _csrf %>'>
+    <% include ./partials/head %>
+</head>
+<body>
+    <div class='page'>
+        <div class='login'>
+            <form class='login__form login-form' v-on:submit='checkForm' id='app' action='/recover' method='post'>
+                <img class='login-form__logo' src='/img/logo.png'>
+                <h1 class='login-form__title'>Forgot username or password?</h1>
+                <p class='login-form__intro'>Enter your email address below, and we will resolve the issue.</p>
+                <div class='login-form__message login-form__message_info' v-if='success'>
+                    {{ success }}
+                </div>
+                <div class='login-form__message login-form__message_type_error' v-if='error'>
+                    {{ error }}
+                </div>
+                <div class='login-form__field field field_type_text' v-if='!success'>
+                    <div class='field__control field-control field-control_type_email'>
+                        <input class='field-control__input input input_type_email input_size_large' placeholder='Email' type='text' name='email' v-model='email' autofocus='autofocus'>
+                    </div>
+                </div>
+                <input type='hidden' name='_csrf' value='<%= _csrf %>'>
+                <button class='primary-button login-form__submit primary-button_size_large' type='submit' v-if='!success'>
+                    <span v-if='!loading'>Request Recovery Link</span>
+                    <span v-else>In Progress...</span>
+                </button>
+                <div class='login-form__forgot-password-wrapper'>
+                    <a class='login-form__forgot-password-link' href='/login'>Back to login</a>
+                </div>
+            </form>
+            <% include ./partials/footer %>
+        </div>
+    </div>
+    <script>
+    const app = new Vue({
+        el: '#app',
+        data: () => (
+            <%- JSON.stringify({
+                loading: false,
+                email: messages.email ? messages.email[0] : '',
+                success: messages.success ? messages.success[0] : '',
+                error: messages.error ? messages.error[0] : ''
+            })%>
+        ),
+        methods: {
+            checkForm(event) {
+                this.loading = true;
+
+                if (!validator.isLength(this.email, 1, 255)) {
+                    this.error = 'Please enter a valid email address';
+                } else if (!validator.isEmail(this.email)) {
+                    this.error = 'Invalid email';
+                } else {
+                    return true;
+                }
+
+                event.preventDefault();
+
+                this.loading = false;
+            }
+        }
+      });
+    </script>
+</body>
+</html>

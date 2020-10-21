@@ -1,0 +1,18 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /srv/app/current
+permissions:
+  - object: /srv/app/current
+    type:
+      - directory
+hooks:
+  ApplicationStop:
+    - location: CodeDeploy/ApplicationStop.sh
+  BeforeInstall:
+    - location: CodeDeploy/BeforeInstall.sh
+  AfterInstall:
+    - location: CodeDeploy/AfterInstall.sh
+  ApplicationStart:
+    - location: CodeDeploy/ApplicationStart.sh

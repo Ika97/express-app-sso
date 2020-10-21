@@ -1,0 +1,18 @@
+<html>
+<head>
+    <% include ./partials/head %>
+</head>
+<body>
+    <div class='page'>
+        <% if (user) { %>
+            <p>User: <%= user %></p>
+            <p>Last Token: <%= lastToken %></p>
+            <p>Last URL: <%= lastRedirectUrl %></p>
+        <% } else { %>
+            <p>No User</p>
+            <p>No Token</p>
+            <p>No URL</p>
+        <% } %>
+    </div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+version: 0.2
+
+# env:
+#   variables:
+#     key: "value"
+#   parameter-store:
+#     key: "value"
+
+phases:
+#   install:
+#     commands:
+#       - "command"
+  pre_build:
+    commands:
+      - echo Build started on `date`
+      - cd $CODEBUILD_SRC_DIR
+      - npm install --global gulp-cli@latest
+      - npm install
+      - mv .env.example .env
+  build:
+    commands:
+      - gulp build
+      - mkdir build
+      - mkdir ./build/dist
+      - mkdir ./build/CodeDeploy
+      - cp --recursive ./dist ./build
+      - cp --recursive ./CodeDeploy ./build
+      - cp ./.nvmrc ./build/.nvmrc
+      - cp ./appspec.yml ./build/appspec.yml
+      - cp ./package.json ./build/package.json
+  post_build:
+    commands:
+      - echo Build completed on `date`
+
+artifacts:
+  files:
+    - ./**/*
+#   discard-paths: yes
+  base-directory: ./build/
+
+# cache:
+#   paths:
+#     - path

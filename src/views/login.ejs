@@ -1,0 +1,67 @@
+<html>
+<head>
+    <meta name='csrf-token', content='<%= _csrf %>'>
+    <% include ./partials/head %>
+</head>
+<body>
+    <div class='page'>
+        <div class='login'>
+            <form class='login__form login-form' v-on:submit='checkForm' id='app' action='<%= action %>' method='post'>
+                <img class='login-form__logo' src='/img/logo.png'>
+                <h1 class='login-form__title'>Subscriber Login</h1>
+                <div class='login-form__message login-form__message_type_error' v-if='error'>
+                    {{ error }}
+                </div>
+                <div class='login-form__field field field_type_text'>
+                    <div class='field__control field-control field-control_type_text'>
+                        <input class='field-control__input input input_type_text input_size_large' placeholder='Username' type='text' name='username' v-model='username' autofocus='autofocus'>
+                    </div>
+                </div>
+                <div class='login-form__field field field_type_password'>
+                    <div class='field__control field-control field-control_type_password'>
+                        <input class='field-control__input input input_type_password input_size_large' placeholder='Password' type='password' name='password' v-model='password'>
+                    </div>
+                </div>
+                <input type='hidden' name='_csrf' value='<%= _csrf %>'>
+                <button class='login-form__submit primary-button primary-button_size_large' type='submit'>
+                    <img class='login-form__loader' src='img/loader.svg' v-if='loading'><span>Log In</span>
+                </button>
+                <div class='login-form__forgot-password-wrapper'>
+                    <a class='login-form__forgot-password-link' href='/recover'>Forgot username or password?</a>
+                </div>
+            </form>
+            <% include ./partials/footer %>
+        </div>
+    </div>
+    <script>
+    const app = new Vue({
+        el: '#app',
+        data: () => (
+            <%- JSON.stringify({
+                loading: false,
+                username: messages.username ? messages.username[0] : '',
+                password: messages.password ? messages.password[0] : '',
+                error: messages.error ? messages.error[0] : ''
+            })%>
+        ),
+        methods: {
+            checkForm(event) {
+                this.loading = true;
+
+                if (!validator.isLength(this.username, 1, 101)) {
+                    this.error = 'Please enter a username';
+                } else if (!validator.isLength(this.password, 1, 101)) {
+                    this.error = 'Please enter a password';
+                } else {
+                    return true;
+                }
+
+                event.preventDefault();
+
+                this.loading = false;
+            }
+        }
+      });
+    </script>
+</body>
+</html>

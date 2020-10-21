@@ -1,0 +1,364 @@
+.login {
+    width: 570px;
+    margin: 0 auto;
+    padding-top: 7%;
+    padding-bottom: 7%;
+    box-sizing: border-box; }
+    .login__form {
+      margin-bottom: 20px;
+      box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2); }
+    .login__notice {
+      font: 400 16px "PT Serif W01", Times, serif;
+      font-size: 13px;
+      text-align: center;
+      line-height: 19px; }
+      .login__notice-link {
+        color: #006bb5;
+        display: inline; }
+    @media (max-width: 768px) {
+      .login {
+        width: 100%;
+        padding: 24px 12px; } }
+    @media (max-height: 609px) {
+      .login {
+        padding-top: 5px;
+        max-width: 310px; } }
+
+  .login-form {
+    background: #f8f8f8;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border-top: 2px solid #00559f;
+    padding: 46px 60px 41px 60px; }
+    .login-form__logo {
+      display: block;
+      height: 54px;
+      width: 228px;
+      margin: 0 auto 39px; }
+    .login-form__title {
+      font: 700 16px "Proxima Nova W01", Times, serif;
+      font-size: 32px;
+      color: #00559f;
+      text-align: center;
+      letter-spacing: -0.8px;
+      margin: 0 0 29px;
+      line-height: 40px; }
+    .login-form__intro {
+      font: 400 16px "PT Serif W01", Times, serif;
+      font-size: 15px;
+      text-align: center;
+      margin-top: -20px;
+      margin-bottom: 36px; }
+    .login-form__message {
+      font: 500 16px "Proxima Nova W01", Times, serif;
+      color: #222222;
+      margin-bottom: 20px;
+      background: #ffffff;
+      padding: 12px;
+      border-left: 4px solid #a90202;
+      box-shadow: rgba(0, 0, 0, 0.0980392) 0 1px 1px 0; }
+    .login-form__message_info {
+      font: 500 16px "Proxima Nova W01", Times, serif;
+      color: #222222;
+      margin-bottom: 20px;
+      background: #ffffff;
+      padding: 12px;
+      border-left: 4px solid #4f833c;
+      box-shadow: rgba(0, 0, 0, 0.0980392) 0 1px 1px 0; }
+    .login-form__field {
+      margin-bottom: 27px; }
+    .login-form__submit {
+      width: 100%;
+      font-size: 22px;
+      margin-bottom: 41px; }
+    .login-form__forgot-password-wrapper {
+      width: 100%;
+      text-align: center; }
+    .login-form__forgot-password-link {
+      position: relative;
+      font: 600 16px "Proxima Nova W01", Times, serif;
+      font-size: 15px;
+      color: #006bb5; }
+      .login-form__forgot-password-link:visited, .login-form__forgot-password-link:active,
+      .no-touch .login-form__forgot-password-link:active,
+      .no-touch .login-form__forgot-password-link:hover, .login-form__forgot-password-link:link {
+        text-decoration: none; }
+      .login-form__forgot-password-link:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: #cedae8;
+        bottom: 0; }
+    .login-form__loader {
+      color: #FFFFFF;
+      height: 1em;
+      width: 1em;
+      margin: .1em .4em -.2em auto; }
+    @media (max-width: 768px) {
+      .login-form {
+        padding: 32px 16px 24px 16px; }
+        .login-form__logo {
+          height: 40px;
+          width: 169px;
+          margin: 0 auto 21px; }
+        .login-form__title {
+          font-size: 24px;
+          margin: 0 0 18px; } }
+    @media (max-height: 609px) {
+      .login-form {
+        padding: 8px 16px 16px 16px; }
+        .login-form__logo {
+          height: 40px;
+          width: 169px;
+          margin-bottom: 10px; }
+        .login-form__title {
+          font-size: 20px;
+          margin-bottom: 5px;
+          line-height: 20px; }
+        .login-form__intro {
+          margin-top: 0;
+          margin-bottom: 9px;
+          font-size: 13px; }
+        .login-form__message {
+          border: none;
+          background: none;
+          padding: 0;
+          font: 600 16px "Proxima Nova W01", Times, serif;
+          color: #a90202;
+          margin-bottom: 5px;
+          box-shadow: none;
+          font-size: 13px; }
+        .login-form__field {
+          margin-bottom: 10px; }
+          .login-form__field .field-control_type_text .input_type_text,
+          .login-form__field .field-control_type_password .input_type_password,
+          .login-form__field .field-control_type_email .input_type_email {
+            padding-top: 10px;
+            padding-bottom: 10px; }
+        .login-form__submit {
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+          margin-bottom: 10px;
+          padding-top: 6px !important;
+          padding-bottom: 6px !important;
+          font-size: 19px !important;
+          box-shadow: 0 2px 0 #004480 !important; } }
+
+  .page {
+    position: relative;
+    height: 100%; }
+    .page__header {
+      position: fixed;
+      left: 0;
+      right: 0;
+      top: 0;
+      z-index: 5; }
+    .page__heading-box {
+      z-index: 4; }
+      @media (min-width: 1025px) and (min-height: 800px) {
+        .page__heading-box {
+          position: fixed;
+          left: 0;
+          right: 0;
+          top: 60px; } }
+      @media (max-width: 1024px) and (min-height: 500px) {
+        .page__heading-box {
+          position: fixed;
+          left: 0;
+          right: 0;
+          top: 50px; } }
+
+  .input_type_text, .input_type_password, .input_type_email, .input_type_textarea {
+    border: 1px solid #d9d9d9;
+    font: 500 16px "Proxima Nova W01", Times, serif;
+    font-size: 16px;
+    color: #666666;
+    line-height: 17px;
+    padding: 12px 16px;
+    width: 100%;
+    border-radius: 2px;
+    box-sizing: border-box;
+    -webkit-box-shadow: inset 0px 1px 1px 0px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: inset 0px 1px 1px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0px 1px 1px 0px rgba(0, 0, 0, 0.2);
+    outline: none;
+    letter-spacing: .9px; }
+    @media (max-width: 768px) {
+      .input_type_text, .input_type_password, .input_type_email, .input_type_textarea {
+        font-size: 14px; } }
+    .input_type_text.ng-invalid.ng-touched, .input_type_password.ng-invalid.ng-touched, .input_type_email.ng-invalid.ng-touched, .input_type_textarea.ng-invalid.ng-touched {
+      border: 1px solid #a90202;
+      -webkit-box-shadow: none 2px 10px 7px -13px transparent;
+      -moz-box-shadow: inset 2px 10px 7px -13px transparent;
+      box-shadow: inset 2px 10px 7px -13px transparent; }
+
+  .input_type_password.input_size_large, .input_type_email.input_size_large, .input_type_text.input_size_large {
+    padding: 21px 14px; }
+    @media (max-width: 768px) {
+      .input_type_password.input_size_large, .input_type_email.input_size_large, .input_type_text.input_size_large {
+        font-size: 16px; } }
+
+  .input_type_textarea.input_size_large {
+    min-height: 160px; }
+
+  *::-webkit-input-placeholder {
+    color: #999999; }
+
+  *:-moz-placeholder {
+    color: #999999; }
+
+  *::-moz-placeholder {
+    color: #999999; }
+
+  *:-ms-input-placeholder {
+    color: #999999; }
+
+  .field-control {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; }
+    .field-control__asterisk {
+      color: #a90202; }
+    .field-control__label {
+      font: 600 16px "Proxima Nova W01", Times, serif;
+      color: #222222;
+      font-size: 12px;
+      box-sizing: border-box;
+      margin-bottom: 5px;
+      display: inline-block; }
+    .field-control__invalid {
+      font-size: 12px;
+      font-family: 600 16px "Proxima Nova W01", Times, serif;
+      color: #a90202; }
+    .field-control__red {
+      border: 1px solid #a90202; }
+    .field-control_type_select .field-control__label {
+      margin-bottom: 5px;
+      display: inline-block; }
+
+  @font-face {
+    font-family: 'PT Serif Bold';
+    src: url("fonts/PT_Serif/pt_serif-web-bold-webfont.eot");
+    src: url("fonts/PT_Serif/pt_serif-web-bold-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/PT_Serif/pt_serif-web-bold-webfont.woff2") format("woff2"), url("fonts/PT_Serif/pt_serif-web-bold-webfont.woff") format("woff"), url("fonts/PT_Serif/pt_serif-web-bold-webfont.ttf") format("truetype"), url("fonts/PT_Serif/pt_serif-web-bold-webfont.svg#pt_serifbold") format("svg");
+    font-weight: normal;
+    font-style: normal; }
+
+  @font-face {
+    font-family: 'PT Serif Bold Italic';
+    src: url("fonts/PT_Serif/pt_serif-web-bolditalic-webfont.eot");
+    src: url("fonts/PT_Serif/pt_serif-web-bolditalic-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/PT_Serif/pt_serif-web-bolditalic-webfont.woff2") format("woff2"), url("fonts/PT_Serif/pt_serif-web-bolditalic-webfont.woff") format("woff"), url("fonts/PT_Serif/pt_serif-web-bolditalic-webfont.ttf") format("truetype"), url("fonts/PT_Serif/pt_serif-web-bolditalic-webfont.svg#pt_serifbold_italic") format("svg");
+    font-weight: normal;
+    font-style: normal; }
+
+  @font-face {
+    font-family: 'PT Serif Italic';
+    src: url("fonts/PT_Serif/pt_serif-web-italic-webfont.eot");
+    src: url("fonts/PT_Serif/pt_serif-web-italic-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/PT_Serif/pt_serif-web-italic-webfont.woff2") format("woff2"), url("fonts/PT_Serif/pt_serif-web-italic-webfont.woff") format("woff"), url("fonts/PT_Serif/pt_serif-web-italic-webfont.ttf") format("truetype"), url("fonts/PT_Serif/pt_serif-web-italic-webfont.svg#pt_serifitalic") format("svg");
+    font-weight: normal;
+    font-style: normal; }
+
+  @font-face {
+    font-family: 'PT Serif Regular';
+    src: url("fonts/PT_Serif/pt_serif-web-regular-webfont.eot");
+    src: url("fonts/PT_Serif/pt_serif-web-regular-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/PT_Serif/pt_serif-web-regular-webfont.woff2") format("woff2"), url("fonts/PT_Serif/pt_serif-web-regular-webfont.woff") format("woff"), url("fonts/PT_Serif/pt_serif-web-regular-webfont.ttf") format("truetype"), url("fonts/PT_Serif/pt_serif-web-regular-webfont.svg#pt_serifregular") format("svg");
+    font-weight: normal;
+    font-style: normal; }
+
+  .primary-button {
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    display: inline-block;
+    font: 600 16px "Proxima Nova W01", Times, serif;
+    position: relative;
+    padding: 15px 20px;
+    font-size: 15px;
+    background-color: #006bb5;
+    border-radius: 1px;
+    color: #ffffff;
+    box-shadow: 0 2px 0 #004480; }
+    .no-touch .primary-button:hover, .primary-button:active {
+      text-decoration: underline; }
+    .no-touch .primary-button:hover {
+      background-color: #00559f;
+      color: #ffffff; }
+    .primary-button:active,
+    .no-touch .primary-button:active, .primary-button:focus {
+      color: #ffffff;
+      user-select: none;
+      background-color: #004480; }
+    .primary-button_size_medium {
+      padding: 17px 23px;
+      font-size: 18px;
+      box-shadow: 0 3px 0 #004480; }
+      .no-touch .primary-button_size_medium:hover {
+        background-color: #00559f;
+        box-shadow: 0 3px 0 #00559f; }
+      .primary-button_size_medium:active,
+      .no-touch .primary-button_size_medium:active {
+        background-color: #004480;
+        box-shadow: 0 3px 0 #004480; }
+    .primary-button_size_large {
+      padding: 15px 26px;
+      font-size: 22px;
+      box-shadow: 0 4px 0 #004480; }
+      .no-touch .primary-button_size_large:hover {
+        background-color: #00559f;
+        box-shadow: 0 4px 0 #00559f; }
+      .primary-button_size_large:active,
+      .no-touch .primary-button_size_large:active {
+        background-color: #004480;
+        box-shadow: 0 4px 0 #004480; }
+    .primary-button_size_small {
+      padding: 11px 28px;
+      text-decoration: none;
+      box-shadow: 0 2px 0 #004480; }
+      @media (max-width: 1024px) {
+        .primary-button_size_small {
+          padding: 11px 45px; } }
+      .no-touch .primary-button_size_small:hover, .primary-button_size_small:active {
+        box-shadow: 0 2px 0 #004480; }
+    .primary-button_full-width {
+      width: 100%; }
+    .primary-button_size_small {
+      padding: 11px 28px;
+      text-decoration: none;
+      box-shadow: 0 2px 0 #004480; }
+      @media (max-width: 1024px) {
+        .primary-button_size_small {
+          padding: 11px 45px; } }
+      .no-touch .primary-button_size_small:hover, .primary-button_size_small:active {
+        box-shadow: 0 2px 0 #004480; }
+
+  @font-face {
+    font-family: 'PT Serif Bold';
+    src: url("fonts/PT_Serif/pt_serif-web-bold-webfont.eot");
+    src: url("fonts/PT_Serif/pt_serif-web-bold-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/PT_Serif/pt_serif-web-bold-webfont.woff2") format("woff2"), url("fonts/PT_Serif/pt_serif-web-bold-webfont.woff") format("woff"), url("fonts/PT_Serif/pt_serif-web-bold-webfont.ttf") format("truetype"), url("fonts/PT_Serif/pt_serif-web-bold-webfont.svg#pt_serifbold") format("svg");
+    font-weight: normal;
+    font-style: normal; }
+
+  @font-face {
+    font-family: 'PT Serif Bold Italic';
+    src: url("fonts/PT_Serif/pt_serif-web-bolditalic-webfont.eot");
+    src: url("fonts/PT_Serif/pt_serif-web-bolditalic-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/PT_Serif/pt_serif-web-bolditalic-webfont.woff2") format("woff2"), url("fonts/PT_Serif/pt_serif-web-bolditalic-webfont.woff") format("woff"), url("fonts/PT_Serif/pt_serif-web-bolditalic-webfont.ttf") format("truetype"), url("fonts/PT_Serif/pt_serif-web-bolditalic-webfont.svg#pt_serifbold_italic") format("svg");
+    font-weight: normal;
+    font-style: normal; }
+
+  @font-face {
+    font-family: 'PT Serif Italic';
+    src: url("fonts/PT_Serif/pt_serif-web-italic-webfont.eot");
+    src: url("fonts/PT_Serif/pt_serif-web-italic-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/PT_Serif/pt_serif-web-italic-webfont.woff2") format("woff2"), url("fonts/PT_Serif/pt_serif-web-italic-webfont.woff") format("woff"), url("fonts/PT_Serif/pt_serif-web-italic-webfont.ttf") format("truetype"), url("fonts/PT_Serif/pt_serif-web-italic-webfont.svg#pt_serifitalic") format("svg");
+    font-weight: normal;
+    font-style: normal; }
+
+  @font-face {
+    font-family: 'PT Serif Regular';
+    src: url("fonts/PT_Serif/pt_serif-web-regular-webfont.eot");
+    src: url("fonts/PT_Serif/pt_serif-web-regular-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/PT_Serif/pt_serif-web-regular-webfont.woff2") format("woff2"), url("fonts/PT_Serif/pt_serif-web-regular-webfont.woff") format("woff"), url("fonts/PT_Serif/pt_serif-web-regular-webfont.ttf") format("truetype"), url("fonts/PT_Serif/pt_serif-web-regular-webfont.svg#pt_serifregular") format("svg");
+    font-weight: normal;
+    font-style: normal; }

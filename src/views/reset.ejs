@@ -1,0 +1,71 @@
+<html>
+<head>
+    <meta name='csrf-token', content='<%= _csrf %>'>
+    <% include ./partials/head %>
+</head>
+<body>
+    <div class='page'>
+        <div class='login'>
+            <form class='login__form login-form' v-on:submit='checkForm' id='app' action='<%= action %>' method='post'>
+                <img class='login-form__logo' src='/img/logo.png'>
+                <h1 class='login-form__title'>Manage Password Credentials</h1>
+                <div class='login-form__message login-form__message_info' v-if='success'>
+                    {{ success }}
+                </div>
+                <div class='login-form__message login-form__message_type_error' v-if='error'>
+                    {{ error }}
+                </div>
+                <div class='login-form__field field field_type_password'>
+                    <div class='field__control field-control field-control_type_password'>
+                        <input class='field-control__input input input_type_password input_size_large' placeholder='New password' type='password' name='password' v-model='password'>
+                    </div>
+                </div>
+                <div class='login-form__field field field_type_password'>
+                    <div class='field__control field-control field-control_type_password'>
+                        <input class='field-control__input input input_type_password input_size_large' placeholder='Confirm new password' type='password' name='confirmPassword' v-model='confirmPassword'>
+                    </div>
+                </div>
+                <input type='hidden' name='_csrf' value='<%= _csrf %>'>
+                <button class='primary-button login-form__submit primary-button_size_large' type='submit' v-if='!success'>
+                    <span v-if='!loading'>Reset Password</span>
+                    <span v-else>In Progress...</span>
+                </button>
+            </form>
+            <% include ./partials/footer %>
+        </div>
+    </div>
+    <script>
+    const app = new Vue({
+        el: '#app',
+        data: () => (
+            <%- JSON.stringify({
+                loading: false,
+                password: messages.password ? messages.password[0] : '',
+                confirmPassword: messages.confirmPassword ? messages.confirmPassword[0] : '',
+                success: messages.success ? messages.success[0] : '',
+                error: messages.error ? messages.error[0] : ''
+            })%>
+        ),
+        methods: {
+            checkForm(event) {
+                this.loading = true;
+
+                if (!validator.isLength(this.password, { min: 6, max: undefined })) {
+                    this.error = 'Please enter a password with 6 or more characters';
+                } else if (!validator.isLength(this.password, { min: 6, max: 100 })) {
+                    this.error = 'Please enter a password with 100 or less characters';
+                } else if (!validator.equals(this.password, this.confirmPassword)) {
+                    this.error = 'Passwords do not match';
+                } else {
+                    return true;
+                }
+
+                event.preventDefault();
+
+                this.loading = false;
+            }
+        }
+      });
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+version: '3'
+services:
+  app:
+    container_name: sso_app
+    hostname: sso_app
+    build: .
+    command: ''
+    restart: always
+    volumes:
+      - ./src:/home/node/app/src
+    ports:
+      - 3000:3000
+      - 3001:3001
+    depends_on:
+      - redis
+    networks:
+      - network
+
+  redis:
+    container_name: sso_redis
+    hostname: sso_redis
+    image: redis:alpine
+    restart: always
+    networks:
+      - network
+
+  redis_cmdr:
+    container_name: sso_redis_cmdr
+    hostname: sso_redis_cmdr
+    image: tenstartups/redis-commander
+    command: --redis-host redis --redis-port 6379
+    ports:
+      - 3002:8081
+    networks:
+      - network
+
+networks:
+  network:
+      driver: bridge

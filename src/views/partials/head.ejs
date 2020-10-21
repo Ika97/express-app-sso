@@ -1,0 +1,13 @@
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<title><%= title %></title>
+<link type='image/png' rel='icon' href='/favicon.ico' />
+<link type='text/css' rel='stylesheet' href='/css/default.css' />
+<link type='text/css' rel='stylesheet' href='//fast.fonts.net/cssapi/cdf18ec2-0c88-436e-a666-efc7bb708c5f.css'/>
+<% if (process.env.NODE_ENV !== 'production') { %>
+<script type='text/javascript' src='//unpkg.com/vue@2.5.16/dist/vue.js'></script>
+<script type='text/javascript' src='//unpkg.com/validator@10.3.0/validator.js'></script>
+<% } else { %>
+<script type='text/javascript' src='/js/vue.min.js'></script>
+<script type='text/javascript' src='/js/validator.min.js'></script>
+<% } %>

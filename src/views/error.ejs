@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <% include ./partials/head %>
+    </head>
+    <body>
+        <div class='page'>
+            <div class='login'>
+                <form class='login__form login-form' action='/' method='get'>
+                    <img class='login-form__logo' src='/img/logo.png'>
+                    <h1 class='login-form__title'><%= title %></h1>
+                    <div class='login-form__message login-form__message_type_error'>
+                        <%= error %>
+                    </div>
+                    <button class='login-form__submit primary-button primary-button_size_large' type='submit'>
+                        <span>Home</span>
+                    </button>
+                </form>
+                <% include ./partials/footer %>
+            </div>
+        </div>
+</body>
+</html>
